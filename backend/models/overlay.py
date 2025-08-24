@@ -8,9 +8,9 @@ class OverlaySchema(Schema):
     content = fields.Str(required=True)
     position = fields.Dict(required=True, keys=fields.Str(), values=fields.Integer())
     size = fields.Dict(required=True, keys=fields.Str(), values=fields.Integer())
-    style = fields.Dict(missing={})
-    visible = fields.Bool(missing=True)
-    layer = fields.Integer(missing=1)
+    layer = fields.Integer(load_default=1)
+    style = fields.Dict(load_default={})
+    visible = fields.Bool(load_default=True)  # <-- Fix here
 
 class OverlayModel:
     """Model class for overlay operations"""

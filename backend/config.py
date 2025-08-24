@@ -7,15 +7,15 @@ class Config:
     """Base configuration class"""
     
     # Database Configuration
-    MONGODB_URI = os.getenv('MONGODB_URI', 'mongodb://localhost:27017/livestream_db')
-    MONGODB_DB_NAME = os.getenv('MONGODB_DB_NAME', 'livestream_db')
+    MONGODB_URI = "mongodb://localhost:27017/"
+    MONGODB_DB_NAME = "livestream"
     
     # Flask Configuration
     SECRET_KEY = os.getenv('SECRET_KEY', 'dev-secret-key-change-in-production')
     DEBUG = os.getenv('DEBUG', 'True').lower() == 'true'
     
     # Stream Configuration
-    STREAM_OUTPUT_DIR = os.getenv('STREAM_OUTPUT_DIR', 'stream_output')
+    STREAM_OUTPUT_DIR = "output"
     MAX_STREAM_DURATION = int(os.getenv('MAX_STREAM_DURATION', '3600'))  # 1 hour
     FFMPEG_PATH = os.getenv('FFMPEG_PATH', 'ffmpeg')
     
